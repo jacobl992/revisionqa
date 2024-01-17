@@ -1,0 +1,32 @@
+[{
+  "_id": {
+    "$oid": "65a8001a6a342e56278d21df"
+  },
+  "type": "question",
+  "body": "What does SOLID stand for",
+  "qacode": 1
+},
+{
+  "_id": {
+    "$oid": "65a8008169d4cd2be2104a45"
+  },
+  "type": "answer",
+  "body": "S - Single-responsiblity Principle. O - Open-closed Principle. L - Liskov Substitution Principle. I - Interface Segregation Principle. D - Dependency Inversion Principle",
+  "qacode": 1
+},
+{
+  "_id": {
+    "$oid": "65a801890420ebce8d810a77"
+  },
+  "type": "question",
+  "body": "What are the key differences between a RMDB (Relational Mapping) and DODB (Document Orientated)?",
+  "qacode": 2
+},
+{
+  "_id": {
+    "$oid": "65a80230a2c8072c9ade15b1"
+  },
+  "type": "answer",
+  "body": "RMBDs have relationships between tables, have null fields and defined table structures, DODBs do not need any of these, it is highly flexible and useful for rapid development and prototyping.",
+  "qacode": 2
+}]
