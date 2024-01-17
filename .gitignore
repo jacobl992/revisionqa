@@ -1,0 +1,16 @@
+.DS_Store
+
+.idea/
+
+node_modules/
+
+logs
+*.log
+
+
+.DS_Store
+Thumbs.db
+
+.env
+
+/data/db
