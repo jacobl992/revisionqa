@@ -3,3 +3,15 @@
 *::after {
     box-sizing: border-box;
 }
+
+h1 {
+    color: teal;
+}
+
+#qa-box {
+    display: none;
+}
+
+#db-answer {
+    display: none;
+}
