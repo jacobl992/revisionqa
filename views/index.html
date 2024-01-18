@@ -3,33 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Coding Revision</title>
+    <script defer src="./js/sendQuery.js"></script>
 </head>
 <body>
 <h1>Coding Revision</h1>
 <button id="generateQuestion">Generate a question</button>
-
-<script>
-    document.querySelector('#generateQuestion').addEventListener('click', async () => {
-        try {
-            const qacode = 1;  // Set your query parameter value
-            const url = `/qa?qacode=${qacode}`;
-            const response = await fetch(url, {
-                method: 'GET',
-                // You can include additional headers or body if needed
-            });
-
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-
-            // Handle the response as needed
-            const data = await response.json();
-            console.log('Response data:', data);
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    });
-</script>
 
 <!--make generate a question randomly pick a qacode from those in db-->
 
