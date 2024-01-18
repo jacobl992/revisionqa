@@ -5,6 +5,7 @@ const app = express()
 const port = 3000
 app.use(express.json())
 
+//db connection
 async function connectToMongo() {
     const connection = await MongoClient.connect("mongodb://root:password@localhost:27017")
     return connection.db('revision')
@@ -22,6 +23,18 @@ async function connectToMongo() {
 //     }
 // )
 
+//serve static
+app.use(express.static('public'));
+
+
+
+//routes
+    //home page:
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/views/index.html');
+});
+
+    //backend api
 app.get('/qa', async (request, response) => {
 
     const qaParams = request.query
@@ -41,7 +54,7 @@ app.get('/qa', async (request, response) => {
         const result = await qas.find(filterProducts(qaParams)).toArray()
         if (result.length > 0) {
             response.json({
-                message: "Successfully question and answer",
+                message: "Successfully retrieved question and answer",
                 data: result
             });
             response.status(200);
@@ -55,6 +68,5 @@ app.get('/qa', async (request, response) => {
         response.status(500).send('Unexpected error');
     }
 })
-
 
 app.listen(port);
