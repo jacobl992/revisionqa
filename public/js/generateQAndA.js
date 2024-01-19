@@ -1,5 +1,7 @@
 let qaCodes = [];
 let qaData = {};
+let questionObject = {};
+let answerObject = {};
 let randomQACode = 0;
 const qaBoxElement = document.querySelector('#qa-box');
 const questionElement = document.querySelector('#question-p');
@@ -50,10 +52,12 @@ document.querySelector('#generateQuestion').addEventListener('click', async (qaC
 
         qaData = await response.json();
         console.log('Response data:', qaData);
-        questionElement.innerHTML = qaData.data[0].body;
+        questionObject = qaData.data.find(obj => obj.type === 'question');
+        answerObject = qaData.data.find(obj => obj.type === 'answer');
+        questionElement.innerHTML = questionObject.body;
         qaBoxElement.style.display = 'block';
         document.querySelector('#display-db-answer').addEventListener('click', () => {
-            dbAnswerElement.innerHTML = qaData.data[1].body;
+            dbAnswerElement.innerHTML = answerObject.body;
             dbAnswerElement.style.display = 'block';
         });
     } catch (error) {
