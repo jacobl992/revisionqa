@@ -10,8 +10,28 @@ h1 {
 
 #qa-box {
     display: none;
+    flex-direction: column;
+    margin: 0 20vw
+}
+
+#question-p {
+    font-weight: bold;
 }
 
 #db-answer {
     display: none;
+    margin-top: 1vw;
+    font-weight: bold;
+    padding: 1vw;
+    border: cornflowerblue solid 1px;
+}
+
+#submit-box {
+    display: flex;
+    flex-direction: column;
+    margin: 0 20vw
+}
+
+.txtarea {
+    margin: 1vw 0
 }

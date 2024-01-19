@@ -55,7 +55,7 @@ document.querySelector('#generateQuestion').addEventListener('click', async (qaC
         questionObject = qaData.data.find(obj => obj.type === 'question');
         answerObject = qaData.data.find(obj => obj.type === 'answer');
         questionElement.innerHTML = questionObject.body;
-        qaBoxElement.style.display = 'block';
+        qaBoxElement.style.display = 'flex';
         document.querySelector('#display-db-answer').addEventListener('click', () => {
             dbAnswerElement.innerHTML = answerObject.body;
             dbAnswerElement.style.display = 'block';

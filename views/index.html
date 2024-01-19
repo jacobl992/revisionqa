@@ -14,17 +14,26 @@
 <div id="qa-box">
     <p id="question-p"></p>
     <div>Write your answer here:</div>
-    <textarea cols="50" rows="8"></textarea>
+    <textarea class="txtarea" cols="50" rows="8"></textarea>
     <button id="display-db-answer">Show answer</button>
+    <div id="db-answer"></div>
 </div>
 
-<div id="db-answer"></div>
+
 
 <!-- DONE --- generate a question randomly pick a qacode from those in db -->
-
 <!-- DONE --- display question, and an answer box, hidden correct answer box, show answer button-->
 <!-- DONE --- show answer reveals hidden correct answer box-->
 
 <!--option to add a question and answer to the db, without using existing qacode-->
+<div id="submit-box">
+    <h3>Submit a question and answer</h3>
+    <span>Question:</span>
+    <textarea id="q-input" class="txtarea" cols="50" rows="2"></textarea>
+    <span>Answer:</span>
+    <textarea id="a-input" class="txtarea" cols="50" rows="2"></textarea>
+    <button id="qa-submit-btn">Submit</button>
+</div>
+
 </body>
 </html>
