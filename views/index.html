@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/styles.css">
     <script defer src="./js/generateQAndA.js"></script>
+    <script defer src="./js/submitQAndA.js"></script>
+
 </head>
 <body>
 <h1>Coding Revision</h1>
@@ -19,20 +21,30 @@
     <div id="db-answer"></div>
 </div>
 
-
-
-<!-- DONE --- generate a question randomly pick a qacode from those in db -->
-<!-- DONE --- display question, and an answer box, hidden correct answer box, show answer button-->
-<!-- DONE --- show answer reveals hidden correct answer box-->
-
-<!--option to add a question and answer to the db, without using existing qacode-->
 <div id="submit-box">
     <h3>Submit a question and answer</h3>
     <span>Question:</span>
     <textarea id="q-input" class="txtarea" cols="50" rows="2"></textarea>
     <span>Answer:</span>
-    <textarea id="a-input" class="txtarea" cols="50" rows="2"></textarea>
+    <textarea id="a-input" class="txtarea" cols="50" rows="4"></textarea>
+    <div id="submit-alert"></div>
     <button id="qa-submit-btn">Submit</button>
+</div>
+
+<div>
+    <h4>To Do</h4>
+    <ul>
+        <li>Improve error handling</li>
+        <li>styling</li>
+        <li>hide generated question</li>
+        <li>show / hide submit question</li>
+        <li>deploy app</li>
+        <li>keep adding questions</li>
+        <li>DONE --- generate a question randomly pick a qacode from those in db</li>
+        <li>DONE --- display question, and an answer box, hidden correct answer box, show answer button</li>
+        <li>DONE --- show answer reveals hidden correct answer box</li>
+        <li>DONE --- option to add a question and answer to the db, without using existing qacode</li>
+    </ul>
 </div>
 
 </body>

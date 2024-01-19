@@ -16,6 +16,9 @@ h1 {
 
 #question-p {
     font-weight: bold;
+    border: darkorange solid 1px;
+    padding: 0.8vw 0.2vw
+
 }
 
 #db-answer {
@@ -33,5 +36,11 @@ h1 {
 }
 
 .txtarea {
+    margin: 1vw 0
+}
+
+#submit-alert {
+    display: none;
+    background-color: #c77b7b;
     margin: 1vw 0
 }

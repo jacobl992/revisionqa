@@ -11,18 +11,6 @@ async function connectToMongo() {
     return connection.db('revision')
 }
 
-// app.get('/', async (request, response) => {
-//         const db = await connectToMongo()
-//         const products = db.collection('questions_and_answers')
-//         const result = await products.insertOne({type: "answer", body: "RMBD have relationships between tables, have null fields and defined table structures, DODBs do not need any of these, it is highly flexible and useful for rapid development and prototyping.", qacode: 2})
-//         if (result.insertedID !== null) {
-//             response.send('it worked')
-//         } else {
-//             response.send('it broke')
-//         }
-//     }
-// )
-
 //serve static
 app.use(express.static('public'));
 
@@ -86,6 +74,30 @@ app.get('/qa', async (request, response) => {
         }
     } catch {
         response.status(500).send('Unexpected error');
+    }
+})
+
+app.post('/addQA', async (request, response) => {
+    try {
+        const db = await connectToMongo()
+        const qas = db.collection('questions_and_answers')
+        //get request body
+        const newQandA = request.body
+        const result = await qas.insertOne(newQandA)
+        if (result.insertedId !== null) {
+            response.status(201).json({
+                message: "Successfully added question and answer"
+            });
+        } else {
+            response.status(400).send({
+                message: "Invalid question and answer",
+                data: []
+            })
+        }
+    } catch {
+        response.status(500).send({
+            message: 'Unexpected error'
+        });
     }
 })
 
