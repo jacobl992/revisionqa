@@ -10,45 +10,32 @@
 
 </head>
 <body>
-<h1>Coding Revision</h1>
-<button id="generateQuestion">Generate a question</button>
-<button id="show-hide-generate">Hide question</button>
-<div id="generate-alert"></div>
-<div id="qa-box">
-    <p id="question-p"></p>
-    <div>Write your answer here:</div>
-    <textarea id="your-answer" class="txtarea" cols="50" rows="8"></textarea>
-    <button id="display-db-answer">Show answer</button>
-    <div id="db-answer"></div>
+<div id="main-box">
+    <h1>Coding Revision</h1>
+    <button id="generateQuestion" class="button">Generate a question</button>
+    <button id="show-hide-generate" class="button">Hide question</button>
+    <div id="generate-alert"></div>
+    <div id="qa-box">
+        <p id="question-p"></p>
+        <div>Write your answer here:</div>
+        <textarea id="your-answer" class="txtarea" cols="50" rows="8"></textarea>
+        <button id="display-db-answer" class="button">Show answer</button>
+        <div id="db-answer"></div>
+    </div>
+
+    <h3>Submit a question and answer:</h3>
+    <button id="show-hide-submit" class="button">Show</button>
+    <div id="submit-box">
+        <span>Question:</span>
+        <textarea id="q-input" class="txtarea" cols="50" rows="2"></textarea>
+        <span>Answer:</span>
+        <textarea id="a-input" class="txtarea" cols="50" rows="4"></textarea>
+        <div id="submit-alert"></div>
+        <button id="qa-submit-btn" class="button">Submit</button>
+    </div>
 </div>
 
-<h4>Submit a question and answer below:</h4>
-<button id="show-hide-submit">Show</button>
-<div id="submit-box">
-    <h3>Submit a question and answer</h3>
-    <span>Question:</span>
-    <textarea id="q-input" class="txtarea" cols="50" rows="2"></textarea>
-    <span>Answer:</span>
-    <textarea id="a-input" class="txtarea" cols="50" rows="4"></textarea>
-    <div id="submit-alert"></div>
-    <button id="qa-submit-btn">Submit</button>
-</div>
-
-<div>
-    <h4>To Do</h4>
-    <ul>
-        <li>DONE --- Improve error handling</li>
-        <li>styling</li>
-        <li>DONE --- hide generated question</li>
-        <li>DONE --- show / hide submit question</li>
-        <li>deploy app</li>
-        <li>keep adding questions</li>
-        <li>DONE --- generate a question randomly pick a qacode from those in db</li>
-        <li>DONE --- display question, and an answer box, hidden correct answer box, show answer button</li>
-        <li>DONE --- show answer reveals hidden correct answer box</li>
-        <li>DONE --- option to add a question and answer to the db, without using existing qacode</li>
-    </ul>
-</div>
+<footer>&#169; Jake Lewis</footer>
 
 </body>
 </html>
