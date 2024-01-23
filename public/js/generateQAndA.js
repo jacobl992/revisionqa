@@ -34,6 +34,7 @@ async function retrieveQACodes (qaCodes) {
 }
 document.querySelector('#generateQuestion').addEventListener('click', async (qaCodes) => {
     //first part - getting list of poss Q's and A's
+    document.querySelector('#your-answer').value = '';
     qaCodes = await retrieveQACodes();
     randomQACode = getRandomEntry(qaCodes);
 
