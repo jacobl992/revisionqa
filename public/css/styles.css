@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    margin: 1vw;
+}
+
 h1 {
     color: teal;
 }
@@ -51,4 +55,9 @@ h1 {
     margin: 1vw 1vw;
     padding: 1vw;
     width: 30vw;
+}
+
+#show-hide-generate {
+    display: none;
+    margin: 1vw;
 }

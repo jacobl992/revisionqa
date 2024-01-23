@@ -8,6 +8,11 @@ const questionElement = document.querySelector('#question-p');
 const dbAnswerElement = document.querySelector('#db-answer');
 const generateAlertBox = document.querySelector('#generate-alert');
 
+document.querySelector('#show-hide-generate').addEventListener('click', () => {
+    qaBoxElement.style.display = 'none';
+    document.querySelector('#show-hide-generate').style.display = 'none';
+});
+
 const extractQacodes = (qacodeData) => {
     return qacodeData.map(obj => obj.qacode);
 };
@@ -38,6 +43,7 @@ async function retrieveQACodes (qaCodes) {
 }
 document.querySelector('#generateQuestion').addEventListener('click', async (qaCodes) => {
     //first part - getting list of poss Q's and A's
+    document.querySelector('#show-hide-generate').style.display = 'block';
     document.querySelector('#your-answer').value = '';
     qaCodes = await retrieveQACodes();
     randomQACode = getRandomEntry(qaCodes);
