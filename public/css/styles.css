@@ -41,6 +41,14 @@ h1 {
 
 #submit-alert {
     display: none;
-    background-color: #c77b7b;
+    background-color: #e8aaaa;
     margin: 1vw 0
+}
+
+#generate-alert {
+    display: none;
+    background-color: #e8aaaa;
+    margin: 1vw 1vw;
+    padding: 1vw;
+    width: 30vw;
 }

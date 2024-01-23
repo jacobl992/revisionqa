@@ -6,6 +6,7 @@ let randomQACode = 0;
 const qaBoxElement = document.querySelector('#qa-box');
 const questionElement = document.querySelector('#question-p');
 const dbAnswerElement = document.querySelector('#db-answer');
+const generateAlertBox = document.querySelector('#generate-alert');
 
 const extractQacodes = (qacodeData) => {
     return qacodeData.map(obj => obj.qacode);
@@ -22,14 +23,17 @@ async function retrieveQACodes (qaCodes) {
         });
 
         if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
+            throw new Error(`Unexpected error. Status: ${response.status}`);
         }
 
-        const data = await response.json();
-        console.log('Response data:', data);
-        return extractQacodes(data.data);
+        const qaCodeResponse = await response.json();
+        console.log('Response data:', qaCodeResponse);
+        return extractQacodes(qaCodeResponse.data);
+
     } catch (error) {
-        console.error('Error:', error);
+        console.error(error);
+        generateAlertBox.innerHTML = error;
+        generateAlertBox.style.display = 'block';
     }
 }
 document.querySelector('#generateQuestion').addEventListener('click', async (qaCodes) => {
@@ -48,7 +52,7 @@ document.querySelector('#generateQuestion').addEventListener('click', async (qaC
         });
 
         if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
+            throw new Error(`Unexpected error. Status: ${response.status}`);
         }
 
         qaData = await response.json();
@@ -62,6 +66,8 @@ document.querySelector('#generateQuestion').addEventListener('click', async (qaC
             dbAnswerElement.style.display = 'block';
         });
     } catch (error) {
-        console.error('Error:', error);
+        console.error(error);
+        generateAlertBox.innerHTML = error;
+        generateAlertBox.style.display = 'block';
     }
 });
