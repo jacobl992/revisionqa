@@ -33,7 +33,7 @@ app.get('/qacodes', async (request, response) => {
             });
             response.status(200);
         } else {
-            response.send({
+            response.status(500).send({
                 message: "Unexpected error",
                 data: []
             })
@@ -67,11 +67,33 @@ app.get('/qa', async (request, response) => {
             });
             response.status(200);
         } else {
-            response.send({
+            response.status(500).send({
                 message: "Unexpected error",
                 data: []
             })
-        }
+        }app.post('/addQA', async (request, response) => {
+            try {
+                const db = await connectToMongo()
+                const qas = db.collection('questions_and_answers')
+                //get request body
+                const newQandA = request.body
+                const result = await qas.insertOne(newQandA)
+                if (result.insertedId !== null) {
+                    response.status(201).json({
+                        message: "Successfully added question and answer"
+                    });
+                } else {
+                    response.status(400).send({
+                        message: "Invalid question and answer",
+                        data: []
+                    })
+                }
+            } catch {
+                response.status(500).send({
+                    message: 'Unexpected error'
+                });
+            }
+        })
     } catch {
         response.status(500).send('Unexpected error');
     }

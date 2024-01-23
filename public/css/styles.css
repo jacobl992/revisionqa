@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    margin: 1vw;
+}
+
 h1 {
     color: teal;
 }
@@ -30,7 +34,7 @@ h1 {
 }
 
 #submit-box {
-    display: flex;
+    display: none;
     flex-direction: column;
     margin: 0 20vw
 }
@@ -41,6 +45,19 @@ h1 {
 
 #submit-alert {
     display: none;
-    background-color: #c77b7b;
+    background-color: #e8aaaa;
     margin: 1vw 0
+}
+
+#generate-alert {
+    display: none;
+    background-color: #e8aaaa;
+    margin: 1vw 1vw;
+    padding: 1vw;
+    width: 30vw;
+}
+
+#show-hide-generate {
+    display: none;
+    margin: 1vw;
 }

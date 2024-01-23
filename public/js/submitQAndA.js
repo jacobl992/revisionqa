@@ -1,3 +1,5 @@
+const showHideSubmitButton = document.querySelector('#show-hide-submit');
+const submitBox = document.querySelector('#submit-box');
 let maxQACode = 0;
 let newQACode = 0;
 let submitQuestion = '';
@@ -6,7 +8,20 @@ let questionBody = {};
 let answerBody = {};
 const submitAlertElement = document.querySelector('#submit-alert');
 
+showHideSubmitButton.addEventListener('click', () => {
+
+    const computedStyle = window.getComputedStyle(submitBox);
+
+    submitBox.style.display = computedStyle.display === 'none' ? 'flex' : 'none';
+    showHideSubmitButton.innerHTML = showHideSubmitButton.innerText === 'Show' ? 'Hide' : 'Show';
+});
+
 document.querySelector('#qa-submit-btn').addEventListener('click', async (qaCodes) => {
+    //reset
+    submitAlertElement.innerHTML = '';
+    submitAlertElement.style.backgroundColor = '#e8aaaa';
+    submitAlertElement.style.display = 'none';
+
     //validation
     submitQuestion = document.querySelector('#q-input').value;
     submitAnswer = document.querySelector('#a-input').value;
@@ -16,7 +31,6 @@ document.querySelector('#qa-submit-btn').addEventListener('click', async (qaCode
         submitAlertElement.style.display = 'block';
         return;
     }
-
     if (submitQuestion.length > 300) {
         submitAlertElement.innerHTML = 'Question is too many characters';
         submitAlertElement.style.display = 'block';
@@ -59,7 +73,7 @@ document.querySelector('#qa-submit-btn').addEventListener('click', async (qaCode
         if (!response.ok) {
             submitAlertElement.innerHTML = response.message;
             submitAlertElement.style.display = 'block';
-            throw new Error(`HTTP error! Status: ${response.status}`);
+            throw new Error(`Unexpected error. Status: ${response.status}`);
         } else {
             const responseBody = await response.json();
             submitAlertElement.innerHTML = responseBody.message;
@@ -68,11 +82,12 @@ document.querySelector('#qa-submit-btn').addEventListener('click', async (qaCode
         }
 
     } catch (error) {
-        submitAlertElement.innerHTML = 'An unexpected error occurred';
+        submitAlertElement.innerHTML = error;
         submitAlertElement.style.display = 'block';
-        console.error('Error:', error);
+        console.error(error);
     }
 
+    //send answer
     try {
         const url = '/addQA';
         const response = await fetch(url, {
@@ -86,17 +101,19 @@ document.querySelector('#qa-submit-btn').addEventListener('click', async (qaCode
         if (!response.ok) {
             submitAlertElement.innerHTML = response.message;
             submitAlertElement.style.display = 'block';
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }else {
+            throw new Error(`Unexpected error. Status: ${response.status}`);
+        } else {
             const responseBody = await response.json();
             submitAlertElement.innerHTML = responseBody.message;
             submitAlertElement.style.backgroundColor = '#87be87';
             submitAlertElement.style.display = 'block';
+            submitQuestion = document.querySelector('#q-input').value = '';
+            submitAnswer = document.querySelector('#a-input').value = '';
         }
 
     }  catch (error) {
-        submitAlertElement.innerHTML = 'An unexpected error occurred';
+        submitAlertElement.innerHTML = error;
         submitAlertElement.style.display = 'block';
-        console.error('Error:', error);
+        console.error(error);
     }
 });
