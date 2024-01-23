@@ -1,3 +1,5 @@
+const showHideSubmitButton = document.querySelector('#show-hide-submit');
+const submitBox = document.querySelector('#submit-box');
 let maxQACode = 0;
 let newQACode = 0;
 let submitQuestion = '';
@@ -5,6 +7,14 @@ let submitAnswer = '';
 let questionBody = {};
 let answerBody = {};
 const submitAlertElement = document.querySelector('#submit-alert');
+
+showHideSubmitButton.addEventListener('click', () => {
+
+    const computedStyle = window.getComputedStyle(submitBox);
+
+    submitBox.style.display = computedStyle.display === 'none' ? 'flex' : 'none';
+    showHideSubmitButton.innerHTML = showHideSubmitButton.innerText === 'Show' ? 'Hide' : 'Show';
+});
 
 document.querySelector('#qa-submit-btn').addEventListener('click', async (qaCodes) => {
     //reset

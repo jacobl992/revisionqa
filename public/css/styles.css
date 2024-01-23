@@ -30,7 +30,7 @@ h1 {
 }
 
 #submit-box {
-    display: flex;
+    display: none;
     flex-direction: column;
     margin: 0 20vw
 }
