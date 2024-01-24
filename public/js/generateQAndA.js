@@ -51,7 +51,7 @@ document.querySelector('#generateQuestion').addEventListener('click', async (qaC
     //second part - selecting a Q and A
     try {
         qaBoxElement.style.display = 'none';
-        dbAnswerElement.style.display = 'none';
+        document.querySelector('#answer-box').style.display = 'none';
         const url = `/qa?qacode=${randomQACode}`;
         const response = await fetch(url, {
             method: 'GET',
@@ -69,7 +69,7 @@ document.querySelector('#generateQuestion').addEventListener('click', async (qaC
         qaBoxElement.style.display = 'flex';
         document.querySelector('#display-db-answer').addEventListener('click', () => {
             dbAnswerElement.innerHTML = answerObject.body;
-            dbAnswerElement.style.display = 'block';
+            document.querySelector('#answer-box').style.display = 'flex';
         });
     } catch (error) {
         console.error(error);

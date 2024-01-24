@@ -2,53 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Coding Revision</title>
+    <meta name="description" content="Coding revision questions">
+    <meta name="author" content="Jake Lewis">
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="icon" href="images/tabicon.png" sizes="192x192">
+    <link rel="shortcut icon" href="./images/favicon.png">
+    <link rel="apple-touch-icon" href="./images/favicon.png">
     <script defer src="./js/generateQAndA.js"></script>
     <script defer src="./js/submitQAndA.js"></script>
 
 </head>
 <body>
-<h1>Coding Revision</h1>
-<button id="generateQuestion">Generate a question</button>
-<button id="show-hide-generate">Hide question</button>
-<div id="generate-alert"></div>
-<div id="qa-box">
-    <p id="question-p"></p>
-    <div>Write your answer here:</div>
-    <textarea id="your-answer" class="txtarea" cols="50" rows="8"></textarea>
-    <button id="display-db-answer">Show answer</button>
-    <div id="db-answer"></div>
+<div id="main-box">
+    <h1>Coding Revision</h1>
+    <button id="generateQuestion" class="button">Generate a question</button>
+    <button id="show-hide-generate" class="button">Hide question</button>
+    <div id="generate-alert"></div>
+    <div id="qa-box">
+        <div id="question-box" class="generated-q-and-a-boxes">
+            <h3 class="generate-qa-headers">Question:</h3>
+            <p id="question-p"></p>
+        </div>
+        <div>Write your answer here:</div>
+        <textarea id="your-answer" class="txtarea" cols="50" rows="8"></textarea>
+        <button id="display-db-answer" class="button">Show answer</button>
+        <div id="answer-box" class="generated-q-and-a-boxes">
+            <h3 class="generate-qa-headers" >Answer:</h3>
+            <p id="db-answer"></p>
+        </div>
+    </div>
+
+    <h3>Submit a question and answer:</h3>
+    <button id="show-hide-submit" class="button">Show</button>
+    <div id="submit-box">
+        <span>Question:</span>
+        <textarea id="q-input" class="txtarea" cols="50" rows="2"></textarea>
+        <span>Answer:</span>
+        <textarea id="a-input" class="txtarea" cols="50" rows="4"></textarea>
+        <div id="submit-alert"></div>
+        <button id="qa-submit-btn" class="button">Submit</button>
+    </div>
 </div>
 
-<h4>Submit a question and answer below:</h4>
-<button id="show-hide-submit">Show</button>
-<div id="submit-box">
-    <h3>Submit a question and answer</h3>
-    <span>Question:</span>
-    <textarea id="q-input" class="txtarea" cols="50" rows="2"></textarea>
-    <span>Answer:</span>
-    <textarea id="a-input" class="txtarea" cols="50" rows="4"></textarea>
-    <div id="submit-alert"></div>
-    <button id="qa-submit-btn">Submit</button>
-</div>
-
-<div>
-    <h4>To Do</h4>
-    <ul>
-        <li>DONE --- Improve error handling</li>
-        <li>styling</li>
-        <li>DONE --- hide generated question</li>
-        <li>DONE --- show / hide submit question</li>
-        <li>deploy app</li>
-        <li>keep adding questions</li>
-        <li>DONE --- generate a question randomly pick a qacode from those in db</li>
-        <li>DONE --- display question, and an answer box, hidden correct answer box, show answer button</li>
-        <li>DONE --- show answer reveals hidden correct answer box</li>
-        <li>DONE --- option to add a question and answer to the db, without using existing qacode</li>
-    </ul>
-</div>
+<footer>&#169; Jake Lewis</footer>
 
 </body>
 </html>

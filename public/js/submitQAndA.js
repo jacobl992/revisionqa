@@ -105,7 +105,7 @@ document.querySelector('#qa-submit-btn').addEventListener('click', async (qaCode
         } else {
             const responseBody = await response.json();
             submitAlertElement.innerHTML = responseBody.message;
-            submitAlertElement.style.backgroundColor = '#87be87';
+            submitAlertElement.style.backgroundColor = '#b0f7a9';
             submitAlertElement.style.display = 'block';
             submitQuestion = document.querySelector('#q-input').value = '';
             submitAnswer = document.querySelector('#a-input').value = '';
