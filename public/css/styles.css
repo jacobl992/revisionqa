@@ -23,7 +23,6 @@ body {
     font-size: 3vw;
 }
 
-
 h1 {
     color: #484a5a;
     text-align: center;
@@ -33,6 +32,7 @@ h1 {
 .button {
     width: 20vw;
     border-radius: 10px 10px 10px 10px;
+    background-color: #feffe8;
 }
 
 #qa-box {
@@ -70,7 +70,6 @@ h1 {
     font-weight: bold;
     margin: 0;
     padding: 1vw;
-    /*color: #33285e;*/
 }
 
 #answer-box {
@@ -95,7 +94,7 @@ h1 {
 }
 
 .txtarea {
-    margin: 1vw 0
+    margin: 1vw 0;
 }
 
 #submit-alert {
@@ -130,17 +129,17 @@ footer {
     text-align: end;
 }
 
-@media screen and (min-width: 700px) {
+@media only screen and (min-width: 700px) {
     body {
             font-size: 1.5vw;
     }
 
-    h1 {
-        font-size: 4vw;
-    }
-
     #main-box {
         font-size: 1.5vw;
+    }
+
+    h1 {
+        font-size: 4vw;
     }
 
     .generate-qa-headers {
