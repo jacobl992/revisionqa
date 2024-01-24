@@ -32,7 +32,7 @@ h1 {
 
 .button {
     width: 20vw;
-
+    border-radius: 10px 10px 10px 10px;
 }
 
 #qa-box {
@@ -43,39 +43,48 @@ h1 {
 }
 
 #question-box {
-    border: #5cbd4b dashed 0.5vw;
+    border: #f4ff09 dashed 0.5vw;
     display: flex;
+}
+
+.generated-q-and-a-boxes {
     flex-direction: column;
     align-items: center;
     padding: 0 3vw;
     margin-bottom: 1vw;
     margin-top: 1vw;
-    border-radius: 10%;
+    border-radius: 10px 10px 10px 10px;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    background-color: rgb(255, 255, 255,0.4);
 }
 
 .generate-qa-headers {
     margin-bottom: 0;
     margin-top: 1vw;
     font-size: 3.2vw;
+    color: #33285e;
 }
 
 #question-p {
     font-weight: bold;
     margin: 0;
     padding: 1vw;
+    /*color: #33285e;*/
+}
 
-    color: #33285e;
+#answer-box {
+    border: #26ff00 dashed 0.5vw;
+    display: none;
 }
 
 #db-answer {
-    display: none;
+    display: block;
     margin-top: 1vw;
     font-weight: bold;
     padding: 1vw;
-    border: #ccbd19 solid 0.5vw;
-    color: #be1ce1;
+    /*color: #33285e;*/
     text-align: center;
-    border-radius: 10%;
 }
 
 #submit-box {
@@ -130,4 +139,11 @@ footer {
         font-size: 4vw;
     }
 
+    #main-box {
+        font-size: 1.5vw;
+    }
+
+    .generate-qa-headers {
+        font-size: 2vw;
+    }
 }

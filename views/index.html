@@ -16,14 +16,17 @@
     <button id="show-hide-generate" class="button">Hide question</button>
     <div id="generate-alert"></div>
     <div id="qa-box">
-        <div id="question-box">
+        <div id="question-box" class="generated-q-and-a-boxes">
             <h3 class="generate-qa-headers">Question:</h3>
             <p id="question-p"></p>
         </div>
         <div>Write your answer here:</div>
         <textarea id="your-answer" class="txtarea" cols="50" rows="8"></textarea>
         <button id="display-db-answer" class="button">Show answer</button>
-        <div id="db-answer"></div>
+        <div id="answer-box" class="generated-q-and-a-boxes">
+            <h3 class="generate-qa-headers" >Answer:</h3>
+            <p id="db-answer"></p>
+        </div>
     </div>
 
     <h3>Submit a question and answer:</h3>
